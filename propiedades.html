@@ -12,32 +12,30 @@
 </head>
 <body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col">
 <!-- TopNavBar -->
-<header class="fixed top-0 w-full z-50 bg-surface/95 dark:bg-surface-container-lowest/95 backdrop-blur-md shadow-sm dark:shadow-none bg-surface dark:bg-surface-container-lowest border-b border-outline-variant/30">
-<div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-<!-- Brand Logo -->
-<a class="flex-shrink-0 flex items-center" href="index.html">
-<img alt="SIRO" class="h-8 md:h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGfbb4fKiJKwh5l0SgpCbn1tIs80q894RXFl_xgHPtGvBDOX5ho0BxLQVlkpXKf5taTeTjTBfUvpKVm8cAqQFEK4Utqn6fRDDGDiIdz36ROf8C9Hnz18ZOFv7W2zHc0De8JveWqMj3mTbKsSNyUnj5NDRrsCK4Jxe6cO_EI4ncnnb6Es8OxUHJR-oJmXw-Ufm76Kh4dI3Y07beqg4DE1U_cSBiSGvTrupzOfZOPmeRXN_3KrAydgpB-bc60b_mlugVw-sC4M0qmt0">
-<span class="sr-only">SIRO</span>
+<nav class="fixed top-0 w-full z-50 bg-surface/95 dark:bg-surface-container-lowest/95 backdrop-blur-md border-b border-outline-variant/30 shadow-sm dark:shadow-none transition-all duration-300">
+<div class="w-full h-20 px-6 md:px-12 flex justify-between items-center md:grid md:grid-cols-3">
+<!-- Logo -->
+<div class="flex items-center justify-start">
+<a class="flex items-center hover:opacity-90 transition-opacity" href="index.html">
+<img alt="SIRO Inmobiliaria" class="h-10 md:h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDC04zrzI1wCueoE9QuL55d2xnksGND9uoUxPB_2oCP9cbBBWi21E68ic8wAhQQijDctgnaTFM9hAY3eowbzGgpjfRmgKiQW06W1lFmYnkxFY8GMnV_co09IqXFkL1LllgK7uUmQuKKTmTDiZEyr69Xxdstg2m7Y6keHEyfnQISe8LzLxfoivdhlghDrgZ-wueO5jYQA8cTEAC3NEMXYGfS2ac5PEGgipGSTNkhtR-uGil62Yvdsy6ZFiT5IJah51YUfbRvlUCY36s">
 </a>
-<!-- Navigation Links (Desktop) -->
-<nav class="hidden md:flex items-center gap-8">
-<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant font-medium hover:text-primary transition-colors hover:text-tertiary-container dark:hover:text-tertiary-fixed-dim transition-all duration-300 font-label-md text-label-md" href="index.html">Inicio</a>
-<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant font-medium hover:text-primary transition-colors hover:text-tertiary-container dark:hover:text-tertiary-fixed-dim transition-all duration-300 font-label-md text-label-md" href="servicios.html">Servicios</a>
+</div>
+<!-- Desktop Navigation -->
+<div class="hidden md:flex items-center justify-center gap-8">
+<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant font-medium hover:text-primary transition-colors font-label-md text-label-md" href="index.html">Inicio</a>
+<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant font-medium hover:text-primary transition-colors font-label-md text-label-md" href="servicios.html">Servicios</a>
 <a class="text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-tertiary-container pb-1 font-label-md text-label-md" href="propiedades.html">Propiedades</a>
-
-<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant font-medium hover:text-primary transition-colors hover:text-tertiary-container dark:hover:text-tertiary-fixed-dim transition-all duration-300 font-label-md text-label-md" href="contacto.html">Contacto</a>
-</nav>
+<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant font-medium hover:text-primary transition-colors font-label-md text-label-md" href="contacto.html">Contacto</a>
+</div>
 <!-- Trailing Action -->
-<div class="flex items-center">
-<a href="contacto.html"><button class="bg-[#e9c176] text-tertiary-container hover:bg-tertiary-fixed-dim/90 transition-all font-label-md text-label-md px-6 py-3 rounded-DEFAULT hidden md:block">
-                    Contáctanos
-                </button></a>
-<button class="md:hidden text-on-surface p-2">
-<span class="material-symbols-outlined">menu</span>
+<div class="flex items-center justify-end gap-4">
+<a class="hidden md:inline-flex items-center justify-center px-6 py-3 btn-gold font-label-md rounded font-bold transition-all duration-300" href="contacto.html">Contáctanos</a>
+<button class="md:hidden text-primary p-2 flex items-center justify-center">
+<span class="material-symbols-outlined text-[32px]">menu</span>
 </button>
 </div>
 </div>
-</header>
+</nav>
 <!-- Main Content -->
 <main class="flex-grow pt-20">
 <!-- Hero Section -->

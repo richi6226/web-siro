@@ -15,22 +15,28 @@
 </head>
 <body class="bg-background text-on-background font-body-md selection:bg-tertiary-fixed selection:text-on-tertiary-fixed min-h-screen flex flex-col pt-20">
 <!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-surface/95 dark:bg-surface-container-lowest/95 backdrop-blur-md bg-surface dark:bg-surface-container-lowest border-b border-outline-variant/30 shadow-sm dark:shadow-none">
-<div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-<a class="font-display-lg text-primary dark:text-primary-fixed-dim tracking-tighter" href="index.html"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDC04zrzI1wCueoE9QuL55d2xnksGND9uoUxPB_2oCP9cbBBWi21E68ic8wAhQQijDctgnaTFM9hAY3eowbzGgpjfRmgKiQW06W1lFmYnkxFY8GMnV_co09IqXFkL1LllgK7uUmQuKKTmTDiZEyr69Xxdstg2m7Y6keHEyfnQISe8LzLxfoivdhlghDrgZ-wueO5jYQA8cTEAC3NEMXYGfS2ac5PEGgipGSTNkhtR-uGil62Yvdsy6ZFiT5IJah51YUfbRvlUCY36s" alt="SIRO Inmobiliaria" class="h-10 w-auto object-contain"></a>
-<div class="hidden md:flex gap-gutter items-center">
-<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant font-medium hover:text-primary transition-colors font-label-md text-label-md hover:text-tertiary-container dark:hover:text-tertiary-fixed-dim transition-all duration-300" href="index.html">Inicio</a>
-<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant font-medium hover:text-primary transition-colors font-label-md text-label-md hover:text-tertiary-container dark:hover:text-tertiary-fixed-dim transition-all duration-300" href="servicios.html">Servicios</a>
-<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant font-medium hover:text-primary transition-colors font-label-md text-label-md hover:text-tertiary-container dark:hover:text-tertiary-fixed-dim transition-all duration-300" href="propiedades.html">Propiedades</a>
-
-<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant font-medium hover:text-primary transition-colors font-label-md text-label-md hover:text-tertiary-container dark:hover:text-tertiary-fixed-dim transition-all duration-300" href="contacto.html">Contacto</a>
+<nav class="fixed top-0 w-full z-50 bg-surface/95 dark:bg-surface-container-lowest/95 backdrop-blur-md border-b border-outline-variant/30 shadow-sm dark:shadow-none transition-all duration-300">
+<div class="w-full h-20 px-6 md:px-12 flex justify-between items-center md:grid md:grid-cols-3">
+<!-- Logo -->
+<div class="flex items-center justify-start">
+<a class="flex items-center hover:opacity-90 transition-opacity" href="index.html">
+<img alt="SIRO Inmobiliaria" class="h-10 md:h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDC04zrzI1wCueoE9QuL55d2xnksGND9uoUxPB_2oCP9cbBBWi21E68ic8wAhQQijDctgnaTFM9hAY3eowbzGgpjfRmgKiQW06W1lFmYnkxFY8GMnV_co09IqXFkL1LllgK7uUmQuKKTmTDiZEyr69Xxdstg2m7Y6keHEyfnQISe8LzLxfoivdhlghDrgZ-wueO5jYQA8cTEAC3NEMXYGfS2ac5PEGgipGSTNkhtR-uGil62Yvdsy6ZFiT5IJah51YUfbRvlUCY36s">
+</a>
 </div>
-<a href="contacto.html"><button class="hidden md:block bg-[#e9c176] text-[#131b2e] px-6 py-3 rounded hover:opacity-90 transition-opacity font-label-md text-label-md font-bold">
-                Contáctanos
-            </button></a>
-<button class="md:hidden text-primary">
-<span class="material-symbols-outlined text-[32px]" data-icon="menu">menu</span>
+<!-- Desktop Navigation -->
+<div class="hidden md:flex items-center justify-center gap-8">
+<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant font-medium hover:text-primary transition-colors font-label-md text-label-md" href="index.html">Inicio</a>
+<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant font-medium hover:text-primary transition-colors font-label-md text-label-md" href="servicios.html">Servicios</a>
+<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant font-medium hover:text-primary transition-colors font-label-md text-label-md" href="propiedades.html">Propiedades</a>
+<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant font-medium hover:text-primary transition-colors font-label-md text-label-md" href="contacto.html">Contacto</a>
+</div>
+<!-- Trailing Action -->
+<div class="flex items-center justify-end gap-4">
+<a class="hidden md:inline-flex items-center justify-center px-6 py-3 btn-gold font-label-md rounded font-bold transition-all duration-300" href="contacto.html">Contáctanos</a>
+<button class="md:hidden text-primary p-2 flex items-center justify-center">
+<span class="material-symbols-outlined text-[32px]">menu</span>
 </button>
+</div>
 </div>
 </nav>
 <!-- Main Content Canvas -->
