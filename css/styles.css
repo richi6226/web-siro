@@ -90,3 +90,37 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-outline);
 }
+
+/* Navigation Bar Adaptive Contrast & Scrolled Styles */
+nav {
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+nav a.text-on-surface-variant {
+  color: var(--color-on-surface-variant) !important;
+  opacity: 0.85;
+  transition: color 0.3s ease, opacity 0.3s ease !important;
+}
+
+nav a.text-on-surface-variant:hover {
+  color: var(--color-tertiary) !important;
+  opacity: 1 !important;
+}
+
+nav a.text-primary {
+  color: var(--color-on-surface) !important;
+  opacity: 1 !important;
+}
+
+nav button, nav .text-primary {
+  color: var(--color-on-surface) !important;
+  transition: color 0.3s ease !important;
+}
+
+/* Light / Dark Mode adaptive scrolled navigation glass styles */
+nav.glass-effect {
+  background: var(--glass-bg) !important;
+  border-color: var(--glass-border) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+}

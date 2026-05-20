@@ -55,6 +55,8 @@
     --color-surface: #131b2e;
     --color-on-background: #ffffff;
     --color-on-surface: #ffffff;
+    --color-on-surface-variant: #bec6e0;
+    --color-primary: #ffffff;
     --glass-bg: rgba(19, 27, 46, 0.75);
     --glass-border: rgba(198, 198, 205, 0.15);
   }
