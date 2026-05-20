@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const typeSelect = document.getElementById("property-type");
   const locationSelect = document.getElementById("location");
   const priceSelect = document.getElementById("price");
-  const searchBtn = filterForm.querySelector("button");
+  const searchBtn = filterForm ? filterForm.querySelector("button") : null;
 
   // Initial render
   renderProperties(PROPORTIES_PORTFOLIO);
