@@ -1,0 +1,19 @@
+# System Files
+.DS_Store
+Thumbs.db
+
+# Vercel
+.vercel
+
+# Editor/IDE Files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Model/Agent Cache Directories (from local development)
+.system_generated/
+.gemini/

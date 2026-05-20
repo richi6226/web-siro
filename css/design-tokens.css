@@ -1,0 +1,61 @@
+/**
+ * SIRO Inmobiliaria - Design Tokens
+ * Centralized CSS custom properties for brand identity, colors, and layout variables.
+ */
+:root {
+  /* Brand Colors */
+  --color-primary: #000000;
+  --color-secondary: #5f5e5b;
+  --color-tertiary: #c5a059;
+  --color-background: #f8f9ff;
+  --color-surface: #f8f9ff;
+  --color-surface-dim: #cbdbf5;
+  --color-surface-bright: #f8f9ff;
+  --color-surface-container: #e5eeff;
+  --color-surface-container-low: #eff4ff;
+  --color-surface-container-high: #dce9ff;
+  --color-surface-container-highest: #d3e4fe;
+  --color-surface-container-lowest: #ffffff;
+  --color-on-primary: #ffffff;
+  --color-on-secondary: #ffffff;
+  --color-on-tertiary: #ffffff;
+  --color-on-background: #0b1c30;
+  --color-on-surface: #0b1c30;
+  --color-on-surface-variant: #45464d;
+  --color-outline: #76777d;
+  --color-outline-variant: #c6c6cd;
+  
+  /* Brand Heritage Accents (Gold and Navy) */
+  --color-accent-gold: #e9c176;
+  --color-accent-navy: #131b2e;
+  
+  /* Typography Families */
+  --font-family-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-family-display: 'Playfair Display', Georgia, serif;
+  
+  /* Layout and Spacings */
+  --spacing-base: 8px;
+  --spacing-stack-sm: 12px;
+  --spacing-stack-md: 24px;
+  --spacing-stack-lg: 48px;
+  --spacing-margin-mobile: 20px;
+  --spacing-margin-desktop: 64px;
+  --spacing-gutter: 24px;
+  --container-max-width: 1280px;
+
+  /* Custom Effects */
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(198, 198, 205, 0.3);
+  --glass-shadow: 0 8px 32px 0 rgba(19, 27, 46, 0.05);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #0b1c30;
+    --color-surface: #131b2e;
+    --color-on-background: #ffffff;
+    --color-on-surface: #ffffff;
+    --glass-bg: rgba(19, 27, 46, 0.75);
+    --glass-border: rgba(198, 198, 205, 0.15);
+  }
+}
