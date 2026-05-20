@@ -214,7 +214,7 @@ document.addEventListener("DOMContentLoaded", () => {
       card.innerHTML = `
         <div class="relative overflow-hidden h-64 bg-secondary-container">
           <img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-          <span class="absolute top-4 left-4 bg-[#131b2e] text-[#e9c176] font-bold text-xs uppercase px-3 py-1 rounded tracking-wider shadow">
+          <span class="absolute top-4 left-4 bg-[#131b2e] text-[#d4b26f] font-bold text-xs uppercase px-3 py-1 rounded tracking-wider shadow">
             ${p.tag}
           </span>
           <span class="absolute bottom-4 right-4 bg-white/90 backdrop-blur text-primary font-headline-md font-bold text-sm px-3 py-1 rounded">
@@ -246,7 +246,7 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
           </div>
           
-          <a href="contacto.html" class="mt-2 w-full text-center inline-flex items-center justify-center py-3 bg-[#e9c176] hover:bg-[#d4ae6a] text-[#131b2e] font-bold font-label-md text-label-md rounded transition-colors shadow-sm">
+          <a href="contacto.html" class="mt-2 w-full text-center inline-flex items-center justify-center py-3 btn-gold font-bold font-label-md text-label-md rounded shadow-sm">
             Solicitar Información
           </a>
         </div>

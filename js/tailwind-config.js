@@ -16,7 +16,7 @@ window.tailwind.config = {
         "secondary-container": "#e5e2dd",
         "on-tertiary-fixed": "#261900",
         "primary": "#000000",
-        "tertiary-fixed-dim": "#e9c176",
+        "tertiary-fixed-dim": "#d4b26f",
         "on-error-container": "#93000a",
         "outline-variant": "#c6c6cd",
         "inverse-surface": "#213145",

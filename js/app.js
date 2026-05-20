@@ -85,7 +85,7 @@ function initMobileMenu() {
     link.href = item.href;
     link.className = `text-2xl font-bold tracking-wide transition-all duration-300 ${
       item.isActive 
-        ? "text-[#e9c176] scale-105" 
+        ? "text-[#d4b26f] scale-105" 
         : "text-white/80 hover:text-white hover:scale-105"
     }`;
     link.textContent = item.text;
@@ -95,7 +95,7 @@ function initMobileMenu() {
   // Create premium CTA for mobile drawer
   const ctaBtn = document.createElement("a");
   ctaBtn.href = "contacto.html";
-  ctaBtn.className = "mt-8 inline-block bg-[#e9c176] text-[#131b2e] px-8 py-4 rounded font-bold text-lg hover:bg-[#d4ae6a] transition-all transform hover:scale-105 shadow-lg max-w-[240px] mx-auto";
+  ctaBtn.className = "mt-8 inline-block btn-gold px-8 py-4 rounded font-bold text-lg transition-all transform hover:scale-105 shadow-lg max-w-[240px] mx-auto";
   ctaBtn.textContent = "Contáctanos";
   navContainer.appendChild(ctaBtn);
 

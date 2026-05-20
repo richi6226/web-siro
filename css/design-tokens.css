@@ -26,7 +26,8 @@
   --color-outline-variant: #c6c6cd;
   
   /* Brand Heritage Accents (Gold and Navy) */
-  --color-accent-gold: #e9c176;
+  --color-accent-gold: #d4b26f;
+  --color-accent-gold-hover: #c8a360;
   --color-accent-navy: #131b2e;
   
   /* Typography Families */
@@ -44,8 +45,8 @@
   --container-max-width: 1280px;
 
   /* Custom Effects */
-  --glass-bg: rgba(255, 255, 255, 0.75);
-  --glass-border: rgba(198, 198, 205, 0.3);
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(0, 0, 0, 0.08);
   --glass-shadow: 0 8px 32px 0 rgba(19, 27, 46, 0.05);
 }
 
@@ -57,7 +58,7 @@
     --color-on-surface: #ffffff;
     --color-on-surface-variant: #bec6e0;
     --color-primary: #ffffff;
-    --glass-bg: rgba(19, 27, 46, 0.75);
-    --glass-border: rgba(198, 198, 205, 0.15);
+    --glass-bg: rgba(255, 255, 255, 0.88);
+    --glass-border: rgba(0, 0, 0, 0.1);
   }
 }

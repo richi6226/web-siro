@@ -46,15 +46,16 @@ body {
 
 /* Custom Interactive States */
 .btn-gold {
-  background-color: var(--color-accent-gold);
-  color: var(--color-accent-navy);
+  background-color: var(--color-accent-gold) !important;
+  color: var(--color-accent-navy) !important;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-gold:hover {
-  background-color: #d4ae6a;
+  background-color: var(--color-accent-gold-hover) !important;
+  color: var(--color-accent-navy) !important;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(233, 193, 118, 0.2);
+  box-shadow: 0 4px 12px rgba(212, 178, 111, 0.25);
 }
 
 /* Interactive Card Transitions */
@@ -96,25 +97,39 @@ nav {
   transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
 }
 
-nav a.text-on-surface-variant {
-  color: var(--color-on-surface-variant) !important;
+/* Base states: Force black/dark-grey navbar links/buttons in ALL conditions (since background is always light) */
+nav a.text-on-surface-variant,
+nav a.dark\:text-on-secondary-fixed-variant {
+  color: #45464d !important;
   opacity: 0.85;
-  transition: color 0.3s ease, opacity 0.3s ease !important;
+  transition: color 0.3s ease, opacity 0.3s ease, transform 0.3s ease !important;
 }
 
-nav a.text-on-surface-variant:hover {
+nav a.text-on-surface-variant:hover,
+nav a.dark\:text-on-secondary-fixed-variant:hover {
   color: var(--color-tertiary) !important;
   opacity: 1 !important;
 }
 
-nav a.text-primary {
-  color: var(--color-on-surface) !important;
+nav a.text-primary,
+nav a.dark\:text-primary-fixed-dim {
+  color: #0b1c30 !important;
   opacity: 1 !important;
+  font-weight: 700 !important;
 }
 
-nav button, nav .text-primary {
-  color: var(--color-on-surface) !important;
+/* Toggle menu button & logo text */
+nav button,
+nav button span,
+nav .text-primary,
+nav .dark\:text-primary {
+  color: #0b1c30 !important;
   transition: color 0.3s ease !important;
+}
+
+nav button:hover,
+nav button:hover span {
+  color: var(--color-tertiary) !important;
 }
 
 /* Light / Dark Mode adaptive scrolled navigation glass styles */
