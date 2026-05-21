@@ -137,7 +137,7 @@ function initLinkTracking() {
   
   allNavLinks.forEach(link => {
     // Skip tracking for logo links or anchors that contain an image
-    if (link.querySelector("img")) return;
+    if (link.classList.contains("logo-link") || link.querySelector("img")) return;
     
     const href = link.getAttribute("href");
     if (href === currentPath || (currentPath === "" && href === "index.html")) {

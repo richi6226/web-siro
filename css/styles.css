@@ -139,3 +139,15 @@ nav.glass-effect {
   backdrop-filter: blur(12px) !important;
   -webkit-backdrop-filter: blur(12px) !important;
 }
+
+/* Force-remove active underlines, borders, or shadows on the logo brand link under all conditions */
+.logo-link,
+.logo-link:hover,
+.logo-link:active,
+.logo-link:focus {
+  border: none !important;
+  border-bottom: 0 !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
