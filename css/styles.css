@@ -142,11 +142,16 @@ nav.glass-effect {
 
 /* Force-remove active underlines, borders, or shadows on the logo brand link under all conditions */
 .logo-link,
+.logo-link *,
 .logo-link:hover,
+.logo-link img:hover,
 .logo-link:active,
-.logo-link:focus {
+.logo-link:focus,
+.logo-link.border-b-2,
+.logo-link.border-tertiary-container {
   border: none !important;
   border-bottom: 0 !important;
+  border-bottom-width: 0 !important;
   text-decoration: none !important;
   box-shadow: none !important;
   outline: none !important;
