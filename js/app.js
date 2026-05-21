@@ -136,6 +136,9 @@ function initLinkTracking() {
   const allNavLinks = document.querySelectorAll("nav a, header.fixed nav a");
   
   allNavLinks.forEach(link => {
+    // Skip tracking for logo links or anchors that contain an image
+    if (link.querySelector("img")) return;
+    
     const href = link.getAttribute("href");
     if (href === currentPath || (currentPath === "" && href === "index.html")) {
       link.classList.add("text-primary", "font-bold", "border-b-2", "border-tertiary-container", "scale-95");
