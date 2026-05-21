@@ -47,7 +47,7 @@ const PROPORTIES_PORTFOLIO = [
     beds: 2,
     baths: 2,
     size: 95,
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDpIUSHI-cg0404LLJv9ioM0OuiD5a16aUB4Huvvl4Zqz58AgvgMdipyIqdlBfpBMwP4avteyrgYq8lWKZbkw68xpaIHXj0M0hPg03Fakm8KNciQWRh5MTvNSiq5fRm84myASBe_9vwoCFvvnUrqKTKQjl1Dy2Q-I8qMWaBi6y5zYnYX_OtI9QIPMMB9tyBDXmDV7EUlM8GFYDL33Vyt5by0XZEk0LKp0nhk_g133kL-USzD9_LFDEaPbuBVz_ueNPUhJYS2n9Hlas",
+    image: "img/raquel.jpg",
     tag: "Novedad"
   },
   {
@@ -62,7 +62,7 @@ const PROPORTIES_PORTFOLIO = [
     beds: 5,
     baths: 5,
     size: 450,
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBWH9HnWGTlbTlAFo_3yd232oHNevrBYS3FqCrJrIDIVFbszkSe8EjZ2dAIyL0Ty7O5HG-kS3G6Bcvn_EfyEwlkgtf6jz-FZfNg-HtSFeLFD5TK8EdfwVbACfmLiX-qxEOk1jixZOga1ev0_po3kmw7nJLxHRW5ekga7Nf1KF8K6EUxjmrKk7W7IyT8Khlyc4Vvmv-hmRr1j0O9W_TfaoOtqDzLvHw0JXYSHOn1dUmU3izTUx-buSlF1rAmzVkUHkySn1LwjKLNh9A",
+    image: "img/raquel.jpg",
     tag: "Exclusivo"
   }
 ];
