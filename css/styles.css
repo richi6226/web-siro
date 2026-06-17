@@ -156,3 +156,99 @@ nav.glass-effect {
   box-shadow: none !important;
   outline: none !important;
 }
+
+/* ===== Google Reviews Widget ===== */
+
+/* Star Rating — rendered via inline SVG, this handles the gold fill */
+.review-star {
+  color: #FBBC04; /* Google's official star gold */
+  filter: drop-shadow(0 1px 2px rgba(251, 188, 4, 0.3));
+}
+
+/* Review Card */
+.review-card {
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.review-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(19, 27, 46, 0.08),
+              0 8px 16px rgba(212, 178, 111, 0.06);
+}
+
+/* Quote mark decorative accent */
+.review-card::before {
+  content: '\201C';
+  position: absolute;
+  top: -8px;
+  left: 20px;
+  font-size: 72px;
+  line-height: 1;
+  font-family: var(--font-family-display);
+  color: var(--color-accent-gold);
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Horizontal scroll carousel */
+.reviews-carousel {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 16px;
+  scrollbar-width: none; /* Firefox */
+}
+
+.reviews-carousel::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.reviews-carousel > .review-card {
+  scroll-snap-align: start;
+  flex: 0 0 calc(33.333% - 16px);
+  min-width: 300px;
+}
+
+@media (max-width: 768px) {
+  .reviews-carousel > .review-card {
+    flex: 0 0 calc(85% - 12px);
+    min-width: 280px;
+  }
+}
+
+/* Google badge hover glow */
+.google-badge {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.google-badge:hover {
+  box-shadow: 0 4px 20px rgba(66, 133, 244, 0.15);
+  transform: translateY(-1px);
+}
+
+/* Fade-in animation for review cards on scroll */
+.review-card {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: reviewFadeIn 0.6s ease forwards;
+}
+
+.review-card:nth-child(1) { animation-delay: 0.1s; }
+.review-card:nth-child(2) { animation-delay: 0.2s; }
+.review-card:nth-child(3) { animation-delay: 0.3s; }
+.review-card:nth-child(4) { animation-delay: 0.4s; }
+.review-card:nth-child(5) { animation-delay: 0.5s; }
+.review-card:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes reviewFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
