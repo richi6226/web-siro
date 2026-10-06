@@ -1,14 +1,14 @@
 <!DOCTYPE html><html class="light" lang="es"><head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<meta name="description" content="Selección de viviendas en venta en Pasaia, Donostia y Gipuzkoa. Contacta con Raquel Ortega para conocer las propiedades disponibles.">
+<meta name="description" content="Viviendas en venta y alquiler en Pasaia, Donostia y Gipuzkoa seleccionadas por Raquel Ortega. Fotos, precios y características de cada propiedad.">
 <link rel="canonical" href="https://www.siroinmobiliaria.com/propiedades">
 <!-- Vista previa al compartir (WhatsApp, Facebook, LinkedIn…) -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_ES">
 <meta property="og:site_name" content="SIRO Inmobiliaria">
-<meta property="og:title" content="Viviendas en venta en Gipuzkoa | SIRO Inmobiliaria">
-<meta property="og:description" content="Selección de viviendas en venta en Pasaia, Donostia y Gipuzkoa. Contacta con Raquel Ortega para conocer las propiedades disponibles.">
+<meta property="og:title" content="Viviendas en venta y alquiler en Gipuzkoa | SIRO Inmobiliaria">
+<meta property="og:description" content="Viviendas en venta y alquiler en Pasaia, Donostia y Gipuzkoa seleccionadas por Raquel Ortega. Fotos, precios y características de cada propiedad.">
 <meta property="og:url" content="https://www.siroinmobiliaria.com/propiedades">
 <meta property="og:image" content="https://www.siroinmobiliaria.com/img/og-image.jpg">
 <meta property="og:image:width" content="1200">
@@ -20,7 +20,7 @@
 <link rel="icon" type="image/png" sizes="192x192" href="img/icon-192.png">
 <link rel="apple-touch-icon" href="img/icon-180.png">
 <meta name="theme-color" content="#131b2e">
-<title>Viviendas en venta en Gipuzkoa | SIRO Inmobiliaria</title>
+<title>Viviendas en venta y alquiler en Gipuzkoa | SIRO Inmobiliaria</title>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet">
 <!-- Centralized System Styles & Configs -->
@@ -56,33 +56,67 @@
 </nav>
 <!-- Main Content -->
 <main class="flex-grow pt-20">
-<!-- Próximamente: Full-page coming soon state -->
-<section class="flex-grow flex items-center justify-center min-h-[calc(100vh-80px)] px-margin-mobile md:px-margin-desktop">
-<div class="max-w-2xl mx-auto text-center flex flex-col items-center py-24">
-<!-- Animated icon with pulse ring -->
-<div class="relative mb-10">
-<div class="absolute inset-0 w-28 h-28 rounded-full bg-[#d4b26f]/10 animate-ping" style="animation-duration: 3s;"></div>
-<div class="relative w-28 h-28 rounded-full bg-surface-container-low border-2 border-[#d4b26f]/30 flex items-center justify-center shadow-[0_8px_32px_rgba(212,178,111,0.12)]">
-<span class="material-symbols-outlined text-5xl text-[#d4b26f]" style="font-variation-settings: 'FILL' 0;">real_estate_agent</span>
+<!-- Cabecera -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-stack-lg md:pt-20 pb-stack-md">
+<span class="text-[#d4b26f] text-xs uppercase tracking-[0.25em] font-semibold block mb-3">Colección SIRO</span>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-4">Nuestras <span class="text-[#d4b26f] italic font-normal font-display">propiedades</span></h1>
+<div class="w-20 h-[2px] bg-[#d4b26f] mb-6 rounded"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Viviendas seleccionadas en Pasaia, Donostia y Gipuzkoa. Si no encuentras lo que buscas, cuéntanoslo: muchas operaciones se cierran antes de publicarse.</p>
+</section>
+<!-- Filtros -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-stack-md">
+<form id="filtros" class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-4 md:p-5 shadow-[0_10px_30px_rgba(0,0,0,0.04)] grid grid-cols-2 lg:grid-cols-[repeat(5,minmax(0,1fr))_auto] gap-3 items-end">
+<label class="flex flex-col gap-1.5 col-span-2 sm:col-span-1">
+<span class="text-[11px] uppercase tracking-[0.15em] font-semibold text-on-surface-variant">Operación</span>
+<select name="operacion" class="w-full rounded border-outline-variant/50 bg-surface py-3 text-body-md focus:border-[#131b2e] focus:ring-[#131b2e]">
+<option value="">Comprar o alquilar</option><option value="venta">Comprar</option><option value="alquiler">Alquilar</option>
+</select>
+</label>
+<label class="flex flex-col gap-1.5 col-span-2 sm:col-span-1">
+<span class="text-[11px] uppercase tracking-[0.15em] font-semibold text-on-surface-variant">Tipo</span>
+<select name="tipo" class="w-full rounded border-outline-variant/50 bg-surface py-3 text-body-md focus:border-[#131b2e] focus:ring-[#131b2e]"><option value="">Todos los tipos</option></select>
+</label>
+<label class="flex flex-col gap-1.5 col-span-2 sm:col-span-1">
+<span class="text-[11px] uppercase tracking-[0.15em] font-semibold text-on-surface-variant">Ubicación</span>
+<select name="municipio" class="w-full rounded border-outline-variant/50 bg-surface py-3 text-body-md focus:border-[#131b2e] focus:ring-[#131b2e]"><option value="">Toda Gipuzkoa</option></select>
+</label>
+<label class="flex flex-col gap-1.5">
+<span class="text-[11px] uppercase tracking-[0.15em] font-semibold text-on-surface-variant">Precio máx.</span>
+<select name="precio" class="w-full rounded border-outline-variant/50 bg-surface py-3 text-body-md focus:border-[#131b2e] focus:ring-[#131b2e]"><option value="">Sin límite</option></select>
+</label>
+<label class="flex flex-col gap-1.5">
+<span class="text-[11px] uppercase tracking-[0.15em] font-semibold text-on-surface-variant">Habitaciones</span>
+<select name="habitaciones" class="w-full rounded border-outline-variant/50 bg-surface py-3 text-body-md focus:border-[#131b2e] focus:ring-[#131b2e]">
+<option value="">Indiferente</option><option value="1">1 o más</option><option value="2">2 o más</option><option value="3">3 o más</option><option value="4">4 o más</option>
+</select>
+</label>
+<button type="button" id="limpiar" class="col-span-2 lg:col-span-1 h-[50px] px-5 rounded border border-outline-variant/60 text-primary font-semibold text-sm hover:border-[#131b2e] transition-colors">Limpiar</button>
+</form>
+</section>
+<!-- Resultados -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-stack-lg md:pb-24 w-full">
+<div class="flex flex-wrap items-center justify-between gap-3 border-b border-outline-variant/30 pb-4 mb-8">
+<p id="contador" class="text-on-surface-variant" aria-live="polite">Cargando propiedades…</p>
+<label class="flex items-center gap-2 text-sm text-on-surface-variant">Ordenar
+<select id="orden" class="rounded border-outline-variant/50 bg-surface py-2 text-sm focus:border-[#131b2e] focus:ring-[#131b2e]">
+<option value="relevancia">Destacadas primero</option><option value="recientes">Más recientes</option><option value="precio-asc">Precio: menor a mayor</option><option value="precio-desc">Precio: mayor a menor</option>
+</select>
+</label>
 </div>
+<div id="resultados" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<div class="rounded-xl bg-secondary-container/40 aspect-[4/5] animate-pulse"></div>
+<div class="rounded-xl bg-secondary-container/40 aspect-[4/5] animate-pulse hidden sm:block"></div>
+<div class="rounded-xl bg-secondary-container/40 aspect-[4/5] animate-pulse hidden lg:block"></div>
 </div>
-<!-- Header -->
-<span class="text-[#d4b26f] text-xs uppercase tracking-[0.25em] font-semibold block mb-3">Colección Exclusiva</span>
-<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-4">Próximamente</h1>
-<div class="w-20 h-[2px] bg-[#d4b26f] mb-8 rounded"></div>
-<!-- Description -->
-<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed max-w-xl mb-4">
-Estamos preparando una selección exclusiva de propiedades en el País Vasco para ofrecerte las mejores oportunidades del mercado.
-</p>
-<p class="font-body-md text-body-md text-on-surface-variant/70 max-w-md mb-10">
-Mientras tanto, si buscas comprar o vender, contacta directamente con Raquel para un asesoramiento personalizado.
-</p>
-<!-- CTA -->
-<a href="contacto.html" class="inline-flex items-center gap-3 px-8 py-4 btn-gold font-label-md text-label-md font-bold rounded-lg shadow-lg group">
-<span class="material-symbols-outlined text-xl">mail</span>
-Contactar con Raquel
-<span class="material-symbols-outlined text-lg transition-transform group-hover:translate-x-1">arrow_forward</span>
-</a>
+<!-- Sin resultados -->
+<div id="vacio" class="hidden max-w-xl mx-auto text-center bg-surface-container-low border border-outline-variant/20 rounded-xl px-8 py-14">
+<span class="material-symbols-outlined text-5xl text-[#d4b26f] mb-4">real_estate_agent</span>
+<h2 class="font-headline-md text-headline-md text-primary mb-3" id="vacio-titulo">Sin resultados</h2>
+<p class="text-on-surface-variant mb-6" id="vacio-texto"></p>
+<div class="flex flex-wrap justify-center gap-3">
+<button type="button" id="vacio-limpiar" class="px-6 py-3 rounded border border-outline-variant/60 text-primary font-semibold text-sm hover:border-[#131b2e] transition-colors">Ver todas</button>
+<a href="contacto.html" class="inline-flex items-center gap-2 px-6 py-3 btn-gold rounded font-semibold text-sm">Cuéntanos qué buscas<span class="material-symbols-outlined text-lg">arrow_forward</span></a>
+</div>
 </div>
 </section>
 </main>
@@ -104,5 +138,6 @@ Contactar con Raquel
 </div>
 </footer>
 <script src="js/app.js?v=4"></script>
+<script type="module" src="js/propiedades.js"></script>
 
 </body></html>

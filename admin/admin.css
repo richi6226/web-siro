@@ -1,0 +1,207 @@
+/**
+ * SIRO Inmobiliaria - Estilos del panel de administración
+ */
+:root {
+  --admin-bg: #f6f5f2;
+  --admin-card: #ffffff;
+  --admin-ink: #0b1c30;
+  --admin-muted: #5f5e5b;
+  --admin-line: #e5e2dd;
+  --admin-navy: #131b2e;
+  --admin-gold: #d4b26f;
+  --admin-gold-hover: #c8a360;
+  --admin-danger: #ba1a1a;
+  --admin-ok: #1f7a4d;
+  --admin-radius: 12px;
+}
+
+body.admin {
+  background: var(--admin-bg);
+  color: var(--admin-ink);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.admin-card {
+  background: var(--admin-card);
+  border: 1px solid var(--admin-line);
+  border-radius: var(--admin-radius);
+}
+
+/* ---------- Formularios ---------- */
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field > span,
+.field-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--admin-ink);
+}
+.field-hint { font-size: 12px; color: var(--admin-muted); }
+
+.input {
+  width: 100%;
+  background: #fff;
+  border: 1px solid #d6d3cd;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 15px;
+  color: var(--admin-ink);
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.input:focus {
+  outline: none;
+  border-color: var(--admin-navy);
+  box-shadow: 0 0 0 3px rgba(19, 27, 46, .12);
+}
+.input:disabled { background: #f3f2ef; color: var(--admin-muted); }
+.input[aria-invalid="true"] { border-color: var(--admin-danger); }
+textarea.input { min-height: 180px; line-height: 1.55; resize: vertical; }
+
+/* Segmented control (Venta / Alquiler) */
+.segmented { display: inline-flex; padding: 3px; background: #efede9; border-radius: 10px; gap: 2px; }
+.segmented label { position: relative; }
+.segmented input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+.segmented span {
+  display: block; padding: 8px 18px; border-radius: 8px;
+  font-size: 14px; font-weight: 600; color: var(--admin-muted);
+  transition: background .15s ease, color .15s ease;
+}
+.segmented input:checked + span { background: #fff; color: var(--admin-ink); box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+.segmented input:focus-visible + span { outline: 2px solid var(--admin-navy); outline-offset: 2px; }
+
+/* Casillas de características */
+.chip-check { position: relative; }
+.chip-check input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+.chip-check span {
+  display: flex; align-items: center; gap: 6px;
+  padding: 9px 12px; border: 1px solid #d6d3cd; border-radius: 999px;
+  font-size: 14px; color: var(--admin-muted); background: #fff;
+  transition: all .15s ease;
+}
+.chip-check span::before {
+  content: "add"; font-family: "Material Symbols Outlined"; font-size: 18px; line-height: 1;
+}
+.chip-check input:checked + span {
+  border-color: var(--admin-navy); background: var(--admin-navy); color: #fff;
+}
+.chip-check input:checked + span::before { content: "check"; color: var(--admin-gold); }
+.chip-check input:focus-visible + span { outline: 2px solid var(--admin-gold); outline-offset: 2px; }
+
+/* Interruptor (Destacada) */
+.switch { position: relative; display: inline-flex; align-items: center; gap: 10px; cursor: pointer; }
+.switch input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.switch .track {
+  width: 42px; height: 24px; border-radius: 999px; background: #d6d3cd;
+  position: relative; transition: background .2s ease; flex: none;
+}
+.switch .track::after {
+  content: ""; position: absolute; top: 3px; left: 3px; width: 18px; height: 18px;
+  border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.2);
+  transition: transform .2s cubic-bezier(.4,0,.2,1);
+}
+.switch input:checked + .track { background: var(--admin-gold); }
+.switch input:checked + .track::after { transform: translateX(18px); }
+.switch input:focus-visible + .track { outline: 2px solid var(--admin-navy); outline-offset: 2px; }
+
+/* ---------- Botones ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600;
+  transition: background .15s ease, color .15s ease, border-color .15s ease, transform .1s ease;
+  cursor: pointer; white-space: nowrap;
+}
+.btn:active { transform: scale(.98); }
+.btn:disabled { opacity: .55; cursor: not-allowed; transform: none; }
+.btn .material-symbols-outlined { font-size: 20px; }
+.btn-primary { background: var(--admin-gold); color: var(--admin-navy); }
+.btn-primary:hover:not(:disabled) { background: var(--admin-gold-hover); }
+.btn-dark { background: var(--admin-navy); color: #fff; }
+.btn-dark:hover:not(:disabled) { background: #22304d; }
+.btn-ghost { background: transparent; color: var(--admin-ink); border: 1px solid #d6d3cd; }
+.btn-ghost:hover:not(:disabled) { border-color: var(--admin-navy); }
+.btn-danger { background: transparent; color: var(--admin-danger); border: 1px solid rgba(186, 26, 26, .35); }
+.btn-danger:hover:not(:disabled) { background: rgba(186, 26, 26, .06); }
+.icon-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; border-radius: 8px; color: var(--admin-muted);
+  transition: background .15s ease, color .15s ease;
+}
+.icon-btn:hover { background: #efede9; color: var(--admin-ink); }
+
+/* ---------- Estados ---------- */
+.badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 3px 10px; border-radius: 999px; font-size: 12px; font-weight: 600;
+  letter-spacing: .02em;
+}
+.badge-borrador  { background: #efede9; color: #5f5e5b; }
+.badge-publicada { background: #e3f3ea; color: var(--admin-ok); }
+.badge-reservada { background: #fdf0d8; color: #8a5a00; }
+.badge-vendida,
+.badge-alquilada { background: var(--admin-navy); color: var(--admin-gold); }
+
+select.estado-select { font-weight: 600; }
+
+/* ---------- Fotos ---------- */
+.dropzone {
+  border: 2px dashed #cfcac2; border-radius: var(--admin-radius);
+  background: #faf9f7; transition: border-color .15s ease, background .15s ease;
+}
+.dropzone.is-dragover { border-color: var(--admin-gold); background: #fdf8ee; }
+
+.photo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+.photo {
+  position: relative; aspect-ratio: 4 / 3; border-radius: 10px; overflow: hidden;
+  background: #efede9; cursor: grab; touch-action: manipulation;
+}
+.photo img { width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none; }
+.photo .photo-actions {
+  position: absolute; top: 6px; right: 6px; display: flex; gap: 4px;
+}
+.photo .photo-actions button {
+  width: 30px; height: 30px; border-radius: 8px; background: rgba(11, 28, 48, .72);
+  color: #fff; display: inline-flex; align-items: center; justify-content: center;
+  backdrop-filter: blur(4px);
+}
+.photo .photo-actions button:hover { background: var(--admin-navy); }
+.photo .photo-actions .material-symbols-outlined { font-size: 18px; }
+.photo .cover-tag {
+  position: absolute; left: 6px; bottom: 6px; padding: 2px 8px; border-radius: 6px;
+  background: var(--admin-gold); color: var(--admin-navy); font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .06em;
+}
+.photo .pending-tag {
+  position: absolute; left: 6px; top: 6px; padding: 2px 8px; border-radius: 6px;
+  background: rgba(255,255,255,.9); color: var(--admin-ink); font-size: 11px; font-weight: 600;
+}
+.photo.sortable-ghost { opacity: .35; }
+.photo.sortable-chosen { box-shadow: 0 10px 30px rgba(19, 27, 46, .25); }
+
+/* ---------- Toast ---------- */
+#toast-root {
+  position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%);
+  z-index: 100; display: flex; flex-direction: column; gap: 8px; align-items: center;
+  pointer-events: none; width: calc(100% - 32px); max-width: 420px;
+}
+.toast {
+  pointer-events: auto; display: flex; align-items: center; gap: 10px;
+  padding: 12px 16px; border-radius: 10px; background: var(--admin-navy); color: #fff;
+  font-size: 14px; box-shadow: 0 10px 30px rgba(0,0,0,.2);
+  animation: toast-in .25s cubic-bezier(.2,.8,.2,1);
+}
+.toast.is-error { background: var(--admin-danger); }
+.toast .material-symbols-outlined { font-size: 20px; color: var(--admin-gold); }
+.toast.is-error .material-symbols-outlined { color: #fff; }
+@keyframes toast-in { from { opacity: 0; transform: translateY(8px); } }
+
+/* Barra inferior de guardado (móvil) */
+.save-bar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
+  background: rgba(255,255,255,.96); backdrop-filter: blur(8px);
+  border-top: 1px solid var(--admin-line);
+  padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}

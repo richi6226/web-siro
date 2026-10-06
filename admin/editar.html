@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Editar propiedad · Panel SIRO</title>
+<link rel="icon" type="image/png" sizes="32x32" href="/img/icon-32.png">
+<link rel="apple-touch-icon" href="/img/icon-180.png">
+<meta name="theme-color" content="#131b2e">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/admin/admin.css">
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<script src="/js/tailwind-config.js"></script>
+</head>
+<body class="admin invisible min-h-screen">
+
+<header class="bg-white border-b border-[#e5e2dd] sticky top-0 z-30">
+  <div class="max-w-6xl mx-auto h-16 px-4 sm:px-6 flex items-center justify-between gap-4">
+    <a href="/admin/panel" class="btn btn-ghost !px-3 !py-2 text-[13px]" data-volver>
+      <span class="material-symbols-outlined !text-[18px]">arrow_back</span>
+      Propiedades
+    </a>
+    <img src="/img/logo.png" alt="SIRO" class="h-8 w-auto hidden sm:block">
+    <div class="flex items-center gap-1 sm:gap-3">
+      <span class="hidden md:inline text-[13px] text-[#5f5e5b]" data-user-email></span>
+      <button class="icon-btn" data-logout title="Cerrar sesión" aria-label="Cerrar sesión">
+        <span class="material-symbols-outlined">logout</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="max-w-6xl mx-auto px-4 sm:px-6 py-8 pb-32 lg:pb-12">
+  <div class="mb-6">
+    <p class="text-xs font-mono text-[#76777d]" data-referencia>Nueva propiedad</p>
+    <h1 class="text-3xl sm:text-4xl text-[#0b1c30] mt-1 break-words" style="font-family:'Playfair Display',serif" data-cabecera>Nueva propiedad</h1>
+  </div>
+
+  <form id="form" class="grid lg:grid-cols-[minmax(0,1fr)_320px] gap-6 items-start" novalidate>
+    <div class="flex flex-col gap-6 min-w-0">
+
+      <!-- Datos principales -->
+      <section class="admin-card p-5 sm:p-6">
+        <h2 class="text-lg font-semibold mb-5">Datos principales</h2>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <label class="field sm:col-span-2">
+            <span>Título del anuncio *</span>
+            <input class="input" name="titulo" maxlength="120" required placeholder="Ej.: Ático con terraza y vistas a la bahía">
+            <small class="field-hint">Corto y descriptivo. Aparece en la web y al compartir por WhatsApp.</small>
+          </label>
+
+          <div class="field">
+            <span class="field-label">Operación</span>
+            <div class="segmented" role="radiogroup" aria-label="Operación">
+              <label><input type="radio" name="operacion" value="venta" checked><span>Venta</span></label>
+              <label><input type="radio" name="operacion" value="alquiler"><span>Alquiler</span></label>
+            </div>
+          </div>
+
+          <label class="field">
+            <span>Tipo de inmueble *</span>
+            <select class="input" name="tipo" required data-opciones="TIPOS"></select>
+          </label>
+
+          <div class="field">
+            <label class="field-label" for="precio">Precio <span data-sufijo-precio>(€)</span></label>
+            <div class="relative">
+              <input class="input pr-16" id="precio" name="precio" inputmode="numeric" autocomplete="off" placeholder="Ej.: 385.000">
+              <span class="absolute right-3 top-1/2 -translate-y-1/2 text-sm text-[#76777d]" data-sufijo-precio-input>€</span>
+            </div>
+            <label class="flex items-center gap-2 text-sm text-[#5f5e5b] mt-1">
+              <input type="checkbox" name="precio_a_consultar" class="rounded border-[#cfcac2] text-[#131b2e] focus:ring-[#131b2e]">
+              Precio a consultar (no mostrar precio)
+            </label>
+          </div>
+
+          <label class="field">
+            <span>Gastos de comunidad (€/mes)</span>
+            <input class="input" name="gastos_comunidad" inputmode="numeric" autocomplete="off" placeholder="Opcional">
+          </label>
+
+          <label class="field">
+            <span>Municipio *</span>
+            <input class="input" name="municipio" list="municipios" required autocomplete="off" placeholder="Ej.: Pasaia">
+            <datalist id="municipios"></datalist>
+          </label>
+
+          <label class="field">
+            <span>Zona o barrio</span>
+            <input class="input" name="zona" autocomplete="off" placeholder="Ej.: Pasai Donibane">
+            <small class="field-hint">Se muestra en la web. La dirección exacta va en «Datos privados».</small>
+          </label>
+        </div>
+      </section>
+
+      <!-- Fotos -->
+      <section class="admin-card p-5 sm:p-6">
+        <div class="flex items-baseline justify-between gap-3 mb-1">
+          <h2 class="text-lg font-semibold">Fotos</h2>
+          <span class="text-sm text-[#76777d]" data-contador-fotos>0 fotos</span>
+        </div>
+        <p class="text-sm text-[#5f5e5b] mb-5">Arrastra para cambiar el orden. La primera es la portada. Se optimizan solas: puedes subirlas directamente desde el móvil.</p>
+
+        <label class="dropzone flex flex-col items-center justify-center text-center gap-2 px-6 py-8 cursor-pointer mb-5" data-dropzone>
+          <span class="material-symbols-outlined !text-[36px] text-[#a17f3b]">add_photo_alternate</span>
+          <span class="font-semibold">Añadir fotos</span>
+          <span class="text-sm text-[#76777d]">Pulsa para elegirlas o arrástralas aquí</span>
+          <input type="file" accept="image/*" multiple class="sr-only" data-input-fotos>
+        </label>
+
+        <div class="photo-grid" data-grid-fotos></div>
+      </section>
+
+      <!-- Características -->
+      <section class="admin-card p-5 sm:p-6">
+        <h2 class="text-lg font-semibold mb-5">Características</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-5 mb-6">
+          <label class="field"><span>m² construidos</span><input class="input" name="m2_construidos" inputmode="numeric" autocomplete="off"></label>
+          <label class="field"><span>m² útiles</span><input class="input" name="m2_utiles" inputmode="numeric" autocomplete="off"></label>
+          <label class="field"><span>m² de parcela</span><input class="input" name="m2_parcela" inputmode="numeric" autocomplete="off" placeholder="Si tiene"></label>
+          <label class="field"><span>Habitaciones</span><input class="input" name="habitaciones" inputmode="numeric" autocomplete="off"></label>
+          <label class="field"><span>Baños</span><input class="input" name="banos" inputmode="numeric" autocomplete="off"></label>
+          <label class="field"><span>Planta</span><input class="input" name="planta" autocomplete="off" placeholder="Ej.: 3ª, Bajo"></label>
+          <label class="field"><span>Año de construcción</span><input class="input" name="ano_construccion" inputmode="numeric" maxlength="4" autocomplete="off"></label>
+          <label class="field md:col-span-2">
+            <span>Estado de conservación</span>
+            <select class="input" name="conservacion" data-opciones="CONSERVACION" data-vacio="Sin indicar"></select>
+          </label>
+        </div>
+        <p class="field-label mb-3">Extras</p>
+        <div class="flex flex-wrap gap-2" data-caracteristicas></div>
+      </section>
+
+      <!-- Descripción -->
+      <section class="admin-card p-5 sm:p-6">
+        <div class="flex items-baseline justify-between gap-3 mb-5">
+          <h2 class="text-lg font-semibold">Descripción</h2>
+          <span class="text-sm text-[#76777d]" data-contador-desc>0 caracteres</span>
+        </div>
+        <label class="field mb-5">
+          <span class="sr-only">Descripción</span>
+          <textarea class="input" name="descripcion" rows="9" placeholder="Cuenta lo que hace especial esta vivienda: luz, vistas, distribución, barrio, servicios cercanos…"></textarea>
+          <small class="field-hint">Deja una línea en blanco para separar párrafos.</small>
+        </label>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <label class="field"><span>Vídeo (YouTube o Vimeo)</span><input class="input" name="video_url" type="url" inputmode="url" placeholder="https://…"></label>
+          <label class="field"><span>Tour virtual 360º</span><input class="input" name="tour_url" type="url" inputmode="url" placeholder="https://…"></label>
+        </div>
+      </section>
+
+      <!-- Certificado energético -->
+      <section class="admin-card p-5 sm:p-6">
+        <h2 class="text-lg font-semibold mb-1">Certificado energético</h2>
+        <p class="text-sm text-[#5f5e5b] mb-5">Es obligatorio mostrarlo en los anuncios de venta y alquiler.</p>
+        <div class="flex flex-wrap gap-2 mb-5" role="radiogroup" aria-label="Calificación energética" data-certificados></div>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <label class="field"><span>Consumo (kWh/m² año)</span><input class="input" name="consumo_energia" inputmode="decimal" autocomplete="off" placeholder="Opcional"></label>
+          <label class="field"><span>Emisiones (kg CO₂/m² año)</span><input class="input" name="emisiones_co2" inputmode="decimal" autocomplete="off" placeholder="Opcional"></label>
+        </div>
+      </section>
+
+      <!-- Privado -->
+      <section class="admin-card p-5 sm:p-6 border-dashed !border-[#cfcac2] bg-[#fbfaf8]">
+        <div class="flex items-center gap-2 mb-1">
+          <span class="material-symbols-outlined text-[#a17f3b]">lock</span>
+          <h2 class="text-lg font-semibold">Datos privados</h2>
+        </div>
+        <p class="text-sm text-[#5f5e5b] mb-5">Solo los ve el equipo de SIRO. Nunca se publican en la web.</p>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <label class="field sm:col-span-2"><span>Dirección exacta</span><input class="input" name="direccion" data-privado autocomplete="off"></label>
+          <label class="field"><span>Propietario/a</span><input class="input" name="propietario_nombre" data-privado autocomplete="off"></label>
+          <label class="field"><span>Teléfono del propietario</span><input class="input" name="propietario_telefono" data-privado type="tel" autocomplete="off"></label>
+          <label class="field sm:col-span-2"><span>Notas internas</span><textarea class="input !min-h-[100px]" name="notas" data-privado rows="3" placeholder="Llaves, horarios de visita, condiciones pactadas…"></textarea></label>
+        </div>
+      </section>
+    </div>
+
+    <!-- Publicación -->
+    <aside class="lg:sticky lg:top-24 flex flex-col gap-4">
+      <section class="admin-card p-5">
+        <h2 class="text-lg font-semibold mb-4">Publicación</h2>
+        <label class="field mb-4">
+          <span>Estado</span>
+          <select class="input estado-select" name="estado"></select>
+          <small class="field-hint" data-ayuda-estado></small>
+        </label>
+        <label class="switch mb-5">
+          <input type="checkbox" name="destacada">
+          <span class="track"></span>
+          <span class="text-sm"><strong class="font-semibold">Destacada</strong><br><span class="text-[#76777d]">Aparece en la página de inicio</span></span>
+        </label>
+
+        <div data-validacion class="hidden mb-4 rounded-lg p-3 text-sm"></div>
+
+        <button type="submit" class="btn btn-primary w-full py-3 hidden lg:flex" data-guardar>
+          <span class="material-symbols-outlined">save</span>Guardar
+        </button>
+        <p class="text-xs text-[#76777d] mt-3 text-center" data-estado-guardado>Sin guardar todavía</p>
+
+        <a data-ver-web target="_blank" rel="noopener" class="hidden btn btn-ghost w-full mt-4">
+          <span class="material-symbols-outlined">open_in_new</span>Ver en la web
+        </a>
+      </section>
+
+      <button type="button" class="hidden btn btn-danger w-full" data-eliminar>
+        <span class="material-symbols-outlined">delete</span>Eliminar propiedad
+      </button>
+    </aside>
+  </form>
+</main>
+
+<!-- Barra de guardado en móvil -->
+<div class="save-bar lg:hidden flex items-center gap-3">
+  <p class="flex-1 text-xs text-[#5f5e5b] leading-tight" data-estado-guardado>Sin guardar todavía</p>
+  <button type="submit" form="form" class="btn btn-primary px-6 py-3" data-guardar>
+    <span class="material-symbols-outlined">save</span>Guardar
+  </button>
+</div>
+
+<script type="module" src="/js/admin/editor.js"></script>
+</body>
+</html>

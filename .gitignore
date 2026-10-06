@@ -20,3 +20,6 @@ Thumbs.db
 
 # Material de vídeo en bruto
 0617/
+
+# Configuración local de Claude
+.claude/

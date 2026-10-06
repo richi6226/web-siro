@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Acceso · Panel SIRO</title>
+<link rel="icon" type="image/png" sizes="32x32" href="/img/icon-32.png">
+<link rel="apple-touch-icon" href="/img/icon-180.png">
+<meta name="theme-color" content="#131b2e">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/admin/admin.css">
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<script src="/js/tailwind-config.js"></script>
+<script>
+  // Se lee antes de que Supabase procese y limpie la URL del enlace de recuperación.
+  window.__SIRO_AUTH_HASH = location.hash;
+</script>
+</head>
+<body class="admin min-h-screen">
+<div class="min-h-screen grid lg:grid-cols-2">
+  <!-- Formulario -->
+  <main class="flex flex-col justify-center px-6 py-12 sm:px-12">
+    <div class="w-full max-w-sm mx-auto">
+      <a href="/" class="inline-block mb-10" aria-label="Ir a la web de SIRO">
+        <img src="/img/logo.png" alt="SIRO Inmobiliaria" class="h-11 w-auto">
+      </a>
+
+      <p id="flash" class="hidden mb-6 rounded-lg px-4 py-3 text-sm" role="alert"></p>
+
+      <!-- Entrar -->
+      <section id="view-login">
+        <h1 class="font-display text-3xl text-[#0b1c30] mb-2" style="font-family:'Playfair Display',serif">Panel de propiedades</h1>
+        <p class="text-[15px] text-[#5f5e5b] mb-8">Entra con tu email y contraseña.</p>
+        <form id="form-login" class="flex flex-col gap-5" novalidate>
+          <label class="field">
+            <span>Email</span>
+            <input class="input" type="email" name="email" autocomplete="username" required>
+          </label>
+          <label class="field">
+            <span>Contraseña</span>
+            <div class="relative">
+              <input class="input pr-12" type="password" name="password" autocomplete="current-password" required>
+              <button type="button" class="icon-btn absolute right-1 top-1/2 -translate-y-1/2" data-toggle-password aria-label="Mostrar contraseña">
+                <span class="material-symbols-outlined">visibility</span>
+              </button>
+            </div>
+          </label>
+          <button class="btn btn-dark w-full py-3 mt-1" type="submit">Entrar</button>
+          <button class="text-sm text-[#5f5e5b] hover:text-[#0b1c30] underline underline-offset-4 self-center" type="button" data-show="view-forgot">
+            ¿Has olvidado tu contraseña?
+          </button>
+        </form>
+      </section>
+
+      <!-- Recuperar -->
+      <section id="view-forgot" class="hidden">
+        <h1 class="text-3xl text-[#0b1c30] mb-2" style="font-family:'Playfair Display',serif">Recuperar contraseña</h1>
+        <p class="text-[15px] text-[#5f5e5b] mb-8">Te enviaremos un enlace para crear una contraseña nueva.</p>
+        <form id="form-forgot" class="flex flex-col gap-5" novalidate>
+          <label class="field">
+            <span>Email</span>
+            <input class="input" type="email" name="email" autocomplete="username" required>
+          </label>
+          <button class="btn btn-dark w-full py-3" type="submit">Enviar enlace</button>
+          <button class="text-sm text-[#5f5e5b] hover:text-[#0b1c30] underline underline-offset-4 self-center" type="button" data-show="view-login">
+            Volver
+          </button>
+        </form>
+      </section>
+
+      <!-- Nueva contraseña -->
+      <section id="view-reset" class="hidden">
+        <h1 class="text-3xl text-[#0b1c30] mb-2" style="font-family:'Playfair Display',serif">Nueva contraseña</h1>
+        <p class="text-[15px] text-[#5f5e5b] mb-8">Elige una contraseña de al menos 8 caracteres.</p>
+        <form id="form-reset" class="flex flex-col gap-5" novalidate>
+          <label class="field">
+            <span>Nueva contraseña</span>
+            <input class="input" type="password" name="password" autocomplete="new-password" minlength="8" required>
+          </label>
+          <label class="field">
+            <span>Repite la contraseña</span>
+            <input class="input" type="password" name="password2" autocomplete="new-password" minlength="8" required>
+          </label>
+          <button class="btn btn-dark w-full py-3" type="submit">Guardar y entrar</button>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <!-- Imagen -->
+  <aside class="hidden lg:block relative overflow-hidden bg-[#131b2e]">
+    <img src="/img/hero-poster.jpg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-60">
+    <div class="absolute inset-0 bg-gradient-to-t from-[#131b2e] via-[#131b2e]/40 to-transparent"></div>
+    <div class="absolute bottom-0 left-0 right-0 p-12 text-white">
+      <p class="text-[#d4b26f] text-xs uppercase tracking-[0.3em] font-semibold mb-3">SIRO Inmobiliaria</p>
+      <p class="text-3xl leading-snug max-w-md" style="font-family:'Playfair Display',serif">
+        <em class="text-[#d4b26f] font-normal">Tu hogar,</em> nuestra prioridad.
+      </p>
+    </div>
+  </aside>
+</div>
+
+<script type="module" src="/js/admin/login.js"></script>
+</body>
+</html>

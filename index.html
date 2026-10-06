@@ -102,44 +102,61 @@
 <p class="font-body-lg text-body-lg text-on-primary/90 mb-stack-lg max-w-2xl drop-shadow-md">
                 En SIRO Inmobiliaria combinamos confianza, lujo y conocimiento local para ofrecerte las mejores propiedades.
             </p>
-<!-- Search Bar — Desactivado con overlay premium -->
-<div class="w-full max-w-4xl relative">
-<!-- Overlay glassmorphism -->
-<div class="absolute inset-0 z-20 bg-[#131b2e]/70 backdrop-blur-[6px] rounded-lg flex flex-col items-center justify-center gap-3 px-6 border border-[#d4b26f]/20">
-<div class="flex items-center gap-3">
-<div class="w-8 h-[1px] bg-[#d4b26f]/50"></div>
-<span class="text-[#d4b26f] text-xs uppercase tracking-[0.3em] font-semibold">Próximamente</span>
-<div class="w-8 h-[1px] bg-[#d4b26f]/50"></div>
-</div>
-<p class="text-white/80 text-sm text-center max-w-md font-body-md">Estamos preparando el buscador de propiedades. Mientras tanto, <a href="contacto.html" class="text-[#d4b26f] underline underline-offset-2 hover:text-white transition-colors">contacta con Raquel</a> para un asesoramiento personalizado.</p>
-</div>
-<!-- Search bar underneath (dimmed, non-interactive) -->
-<div class="bg-surface/95 backdrop-blur-md p-6 rounded-lg shadow-[0_10px_30px_rgba(0,0,0,0.1)] flex flex-col md:flex-row gap-4 items-end opacity-30 pointer-events-none select-none" aria-hidden="true">
-<div class="w-full md:flex-1">
-<label class="block font-label-md text-label-md text-on-surface-variant mb-2 text-left">Ubicación</label>
+<!-- Buscador -->
+<form action="/propiedades" method="get" id="buscador-hero" class="w-full max-w-4xl bg-surface/95 backdrop-blur-md p-4 md:p-6 rounded-lg shadow-[0_10px_30px_rgba(0,0,0,0.15)] grid grid-cols-1 md:grid-cols-[1fr_1fr_1.3fr_auto] gap-3 md:gap-4 items-end text-left">
+<label class="block">
+<span class="block font-label-md text-label-md text-on-surface-variant mb-2">Busco</span>
 <div class="relative">
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">location_on</span>
-<input class="w-full pl-10 pr-4 py-3 bg-secondary-container/50 border border-outline-variant/30 rounded font-body-md text-body-md" placeholder="Ej. País Vasco" type="text" disabled>
-</div>
-</div>
-<div class="w-full md:flex-1">
-<label class="block font-label-md text-label-md text-on-surface-variant mb-2 text-left">Tipo de Propiedad</label>
-<div class="relative">
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">home</span>
-<select class="w-full pl-10 pr-4 py-3 bg-secondary-container/50 border border-outline-variant/30 rounded font-body-md text-body-md appearance-none" disabled>
-<option>Todos</option>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline pointer-events-none">sell</span>
+<select name="operacion" class="w-full pl-10 pr-8 py-3 bg-secondary-container/50 border border-outline-variant/30 rounded font-body-md text-body-md focus:border-[#131b2e] focus:ring-[#131b2e]">
+<option value="venta">Comprar</option>
+<option value="alquiler">Alquilar</option>
 </select>
-<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline pointer-events-none">expand_more</span>
 </div>
+</label>
+<label class="block">
+<span class="block font-label-md text-label-md text-on-surface-variant mb-2">Tipo de propiedad</span>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline pointer-events-none">home</span>
+<select name="tipo" class="w-full pl-10 pr-8 py-3 bg-secondary-container/50 border border-outline-variant/30 rounded font-body-md text-body-md focus:border-[#131b2e] focus:ring-[#131b2e]">
+<option value="">Todos</option>
+<option value="piso">Piso</option>
+<option value="atico">Ático</option>
+<option value="casa">Casa</option>
+<option value="chalet">Chalet</option>
+<option value="local">Local comercial</option>
+</select>
 </div>
-<button class="w-full md:w-auto bg-primary text-on-primary px-8 py-3 rounded font-label-md text-label-md flex items-center justify-center gap-2" disabled>
+</label>
+<label class="block">
+<span class="block font-label-md text-label-md text-on-surface-variant mb-2">Ubicación</span>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline pointer-events-none">location_on</span>
+<input name="municipio" list="municipios-hero" autocomplete="off" class="w-full pl-10 pr-4 py-3 bg-secondary-container/50 border border-outline-variant/30 rounded font-body-md text-body-md focus:border-[#131b2e] focus:ring-[#131b2e]" placeholder="Ej. Pasaia, Donostia…" type="text">
+<datalist id="municipios-hero">
+<option value="Pasaia"></option><option value="Donostia-San Sebastián"></option><option value="Errenteria"></option><option value="Lezo"></option><option value="Hondarribia"></option><option value="Irun"></option><option value="Oiartzun"></option>
+</datalist>
+</div>
+</label>
+<button type="submit" class="w-full md:w-auto bg-[#131b2e] hover:bg-[#22304d] text-white px-8 py-3 rounded font-label-md text-label-md font-semibold flex items-center justify-center gap-2 transition-colors h-[50px]">
 <span class="material-symbols-outlined">search</span>
 Buscar
 </button>
-</div>
-</div>
+</form>
 </div>
 </header>
+<!-- Propiedades destacadas (se muestra solo si hay propiedades publicadas) -->
+<section id="destacadas" class="hidden py-stack-lg md:py-24 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-stack-lg">
+<div>
+<span class="text-[#d4b26f] text-xs uppercase tracking-[0.25em] font-semibold block mb-2">Selección SIRO</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Propiedades <span class="text-[#d4b26f] italic font-normal font-display">destacadas</span></h2>
+<div class="w-16 h-[2px] bg-[#d4b26f] mt-3"></div>
+</div>
+<a href="/propiedades" class="inline-flex items-center gap-2 text-primary font-semibold hover:text-[#a17f3b] transition-colors group">Ver todas las propiedades<span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span></a>
+</div>
+<div id="destacadas-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter"></div>
+</section>
 <!-- What We Do -->
 <section class="py-stack-lg md:py-24 bg-surface-container-low" id="sobre-raquel">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
@@ -384,4 +401,5 @@ Ver todas las reseñas en Google
 
 
 <script src="js/app.js?v=4"></script>
+<script type="module" src="js/destacadas.js"></script>
 <div id="snapdom-sandbox" data-snapdom-sandbox="true" aria-hidden="true" style="position: absolute; left: -9999px; top: -9999px; width: 0px; height: 0px; overflow: hidden;"></div></body></html>
