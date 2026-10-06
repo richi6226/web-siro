@@ -41,8 +41,8 @@ function initMobileMenu() {
   const toggles = document.querySelectorAll("button.md\\:hidden, nav button:not(.hidden)");
   if (!toggles.length) return;
 
-  // Extract navigation items from the desktop navbar to ensure zero maintenance desyncs
-  const desktopLinks = document.querySelectorAll("nav a, header.fixed nav a");
+  // Extract navigation items from the desktop navbar only (not the logo, CTA or footer links)
+  const desktopLinks = document.querySelectorAll("nav.fixed div.hidden.md\\:flex a");
   const menuItems = [];
   
   desktopLinks.forEach(link => {
@@ -133,7 +133,7 @@ function initMobileMenu() {
  */
 function initLinkTracking() {
   const currentPath = window.location.pathname.split("/").pop();
-  const allNavLinks = document.querySelectorAll("nav a, header.fixed nav a");
+  const allNavLinks = document.querySelectorAll("nav.fixed div.hidden.md\\:flex a");
   
   allNavLinks.forEach(link => {
     // Skip tracking for logo links or anchors that contain an image

@@ -17,3 +17,6 @@ Thumbs.db
 # Model/Agent Cache Directories (from local development)
 .system_generated/
 .gemini/
+
+# Material de vídeo en bruto
+0617/

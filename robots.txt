@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://siroinmobiliaria.com/sitemap.xml
