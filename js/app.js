@@ -68,7 +68,7 @@ function initMobileMenu() {
   // Create mobile drawer overlay container
   const drawer = document.createElement("div");
   drawer.id = "mobile-navigation-drawer";
-  drawer.className = "fixed inset-0 z-50 bg-[#131b2e]/98 backdrop-blur-xl transform translate-x-full transition-transform duration-500 ease-in-out flex flex-col justify-center items-center";
+  drawer.className = "fixed inset-0 z-50 bg-[#131b2e]/95 backdrop-blur-xl transform translate-x-full transition-transform duration-500 ease-in-out flex flex-col justify-center items-center";
   
   // Create close button
   const closeBtn = document.createElement("button");
